@@ -27,3 +27,5 @@ dist-ssr
 # dotenv environment variables file
 .env
 .env.test
+# Local Netlify folder
+.netlify
