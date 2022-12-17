@@ -4,7 +4,6 @@ import axios from "axios";
 import { nanoid } from "nanoid";
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
-import cors from "cors";
 
 function App() {
   const [movieResults, setMovieResults] = useState();
@@ -21,8 +20,8 @@ function App() {
       event.preventDefault();
     }
     if (searchKey && searchKey !== "") {
-      axios.use(cors());
-      const data = await axios.get(`${api_url}s=${searchKey}${api_key}`);
+      const data = await axios.get(`${api_url}s=${searchKey}${api_key}`{headers: {'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',}});
       return setMovieResults(data.data.Search);
     }
   };
