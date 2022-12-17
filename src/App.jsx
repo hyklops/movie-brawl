@@ -22,10 +22,7 @@ function App() {
     if (searchKey && searchKey !== "") {
       /* const data = await axios.get(`${api_url}s=${searchKey}${api_key}`,); */
       const data = await axios(`${api_url}s=${searchKey}${api_key}`, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        },
+        crossdomain: true,
       });
       return setMovieResults(data.data.Search);
     }
