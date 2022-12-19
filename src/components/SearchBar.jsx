@@ -14,7 +14,7 @@ export default function SearchBar(props) {
     selectMovie,
     selectedMovies,
   } = props;
-  console.log({ searchKey });
+
   const [modalShown, toggleModal] = React.useState(false);
   const close = () => {
     toggleModal(false), setSearchKey(false), setMovieResults();
@@ -46,6 +46,7 @@ export default function SearchBar(props) {
               type="text"
               placeholder="Search..."
               name="search"
+              autoComplete="off"
               onInput={(event) => setSearchKey(event.target.value)}
             />
           </form>

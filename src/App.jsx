@@ -91,14 +91,6 @@ function App() {
     });
   }, [change]);
 
-  useEffect(() => {
-    console.log({ movieResults });
-  }, [isFetched]);
-
-  useEffect(() => {
-    console.log({ selectedMovies });
-  }, [selectedMovies]);
-
   return (
     <div className="App">
       <div className="container">
